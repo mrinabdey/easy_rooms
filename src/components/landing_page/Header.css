@@ -1,0 +1,42 @@
+.header_container_container {
+  padding: 10px 2px;
+  background-color: var(--blue);
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px;
+}
+
+.search_bar {
+  all: unset;
+  border-bottom: 1px solid #ffffff;
+  color: #fff;
+  padding: 5px;
+}
+
+.search_bar::placeholder {
+  color: #fff;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fa-user-circle {
+  color: #fff;
+}
+
+.logo img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.auth_text {
+  display: inline;
+  color: #fff;
+  padding: 0px 5px;
+}

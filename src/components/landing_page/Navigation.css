@@ -1,0 +1,20 @@
+.navbar_container_container {
+  display: flex;
+  justify-content: space-around;
+  /* padding: 5px 0px; */
+  background-color: var(--blue);
+}
+
+.navbar_container {
+  padding: 10px;
+}
+
+/* .navbar_container:hover {
+  box-shadow: 1px 1px 5px black;
+} */
+
+.navbar_icon {
+  font-size: 20px;
+  color: #fff;
+  pointer-events: none;
+}

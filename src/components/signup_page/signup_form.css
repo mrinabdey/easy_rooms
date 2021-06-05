@@ -1,0 +1,70 @@
+.signup_form_container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.message_container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 20%;
+    font-size: 20px;
+    color: black;
+}
+
+.email_input, .password_input {
+    width: 80vw;
+    height: 40px;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 0px;
+    margin: 10px;
+}
+
+.icon {
+    position: absolute;
+    font-size: 25px;
+    color: var(--blue);
+}
+
+.signup_button {
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgb(0, 204, 255);
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 20px;
+}
+
+.bottom_text {
+    padding-top: 50px;
+}
+
+.login_text {
+    color: var(--blue);
+}
+
+.no_display {
+    display: none;
+}
+
+.check_icon {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 305px;
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.check_icon_3 {
+    color: green;
+    margin-left: 350px;
+}

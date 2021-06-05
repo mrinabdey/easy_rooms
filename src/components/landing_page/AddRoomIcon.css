@@ -1,0 +1,15 @@
+.add-icon-container {
+  padding: 10px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  opacity: 0.5;
+}
+
+.fa-plus-circle {
+  font-size: 60px;
+  color: black;
+  border-radius: 30px;
+  background-color: #ffffff;
+  text-decoration: none;
+}

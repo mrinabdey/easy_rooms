@@ -1,0 +1,19 @@
+.room_card_container {
+    margin: 10px;
+    box-shadow: 1px 1px 10px black;
+}
+
+.room_image_container {
+    margin: 10px; 
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.room_image {
+    max-width: 90vw;
+    max-height: 300px; 
+}
+
+.room_information_container {
+    padding: 10px;
+}

@@ -1,0 +1,12 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+:root {
+    --blue: #6c9dba;
+}
+
+body {
+    background-color: #fff;
+}

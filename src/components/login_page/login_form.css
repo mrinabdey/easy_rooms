@@ -1,0 +1,63 @@
+.login_form_container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* .message_container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 20%;
+    font-size: 20px;
+    color: black;
+} */
+
+.email_input, .password_input {
+    width: 80%;
+    height: 40px;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.icon {
+    position: absolute;
+    font-size: 25px;
+    padding-top: 18px;
+    padding-left: 25px;
+    color: var(--blue);
+}
+
+.login_button {
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgb(0, 204, 255);
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 20px;
+}
+
+.bottom_text_1 {
+    padding-top: 40px;
+}
+
+.bottom_text_2 {
+    padding-top: 20px;
+}
+
+.click_here_text {
+    color: var(--blue);
+}
+
+.red_border {
+    border: 1px solid red;
+}

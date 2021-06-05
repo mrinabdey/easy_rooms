@@ -1,0 +1,28 @@
+.addroom_form_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.addroom_input {
+    width: 80%;
+    display: block;
+    border: 2px solid #15A4FB;
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 30px  
+}
+
+.addroom_label {
+    font-size: 20px;
+    color: #15A4FB;
+    font-weight: bold;
+    margin: 10px; 
+}
+
+#features_input {
+    height: 100px;
+    line-height: 20px;
+}

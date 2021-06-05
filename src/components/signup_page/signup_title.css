@@ -1,0 +1,11 @@
+.signup_title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    top: 5%; 
+    transform: translate(-50%, -50%); 
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--blue);
+}
