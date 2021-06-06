@@ -1,28 +1,37 @@
 .addroom_form_container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
+  position: fixed;
+  top: 12%;
+  left: 1rem;
 }
 
 .addroom_input {
-    width: 80%;
-    display: block;
-    border: 2px solid #15A4FB;
-    border-radius: 10px;
-    margin: 10px;
-    margin-bottom: 30px  
+  width: 100%;
+  height: 20px;
+  display: block;
+  border: 2px solid #396782;
+  border-radius: 7px;
+  margin: 10px;
+  margin-bottom: 30px;
 }
 
 .addroom_label {
-    font-size: 20px;
-    color: #15A4FB;
-    font-weight: bold;
-    margin: 10px; 
+  font-size: 17px;
+  color: #6c9dba;
+  font-weight: bold;
+  margin: 10px;
 }
 
 #features_input {
-    height: 100px;
-    line-height: 20px;
+  height: 100px;
+  line-height: 20px;
+}
+
+::placeholder {
+  padding-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.addroom_button_container {
+  padding-left: 30%;
+  text-align: center;
 }

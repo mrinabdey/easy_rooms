@@ -1,7 +1,7 @@
 .loading-icon-container {
   position: absolute;
-  right: 50%;
-  top: 50%;
+  right: 45%;
+  top: 45%;
   transform: translate(-50%, -50%);
   border: 10px solid #f3f3f3;
   border-radius: 50%;

@@ -1,11 +1,9 @@
 .addroom_title {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    left: 50%;
-    top: 5%; 
-    transform: translate(-50%, -50%); 
-    font-size: 30px;
-    font-weight: bold;
-    color: #15A4FB;
+  text-align: center;
+  position: fixed;
+  left: 7rem;
+  top: 1.5rem;
+  font-size: 32px;
+  font-weight: bolder;
+  color: #6c9dba;
 }

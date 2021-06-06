@@ -20,12 +20,12 @@ function Header(props) {
       <div className="header_container">
         <div className="logo_container">
           {/* <Link to="/"> */}
-            <div className="logo">
-              <img
-                src=""
-                alt="logo"
-              />
-            </div>
+          <div className="logo">
+            <img
+              src="https://e7.pngegg.com/pngimages/339/761/png-clipart-computer-icons-foursquare-button-button-simple-logo.png"
+              alt="logo"
+            />
+          </div>
           {/* </Link> */}
         </div>
         <div className="search_bar_container">
@@ -40,16 +40,23 @@ function Header(props) {
           </div>
         </div>
         <div className="auth_text_container">
-          {ctx.isLoggedIn ? 
-          <div className="logout_text auth_text" onClick={() => props.logoutHandler(false)}>Logout</div> :
-          <>
-          <Link to="/login" style={{textDecoration: 'none'}}>
-            <div className="login_text auth_text">Login</div>
-          </Link>
-          <Link to="/signup" style={{textDecoration: 'none'}}>
-            <div className="signup_text auth_text">Signup</div>
-          </Link>
-          </>}
+          {ctx.isLoggedIn ? (
+            <div
+              className="logout_text auth_text"
+              onClick={() => props.logoutHandler(false)}
+            >
+              Logout
+            </div>
+          ) : (
+            <>
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                <div className="login_text auth_text">Login</div>
+              </Link>
+              <Link to="/signup" style={{ textDecoration: "none" }}>
+                <div className="signup_text auth_text">Signup</div>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
