@@ -1,0 +1,11 @@
+#search_result_title {
+  margin-top: 30%;
+  font-family: -webkit-pictograph;
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.hidden {
+  display: none;
+}

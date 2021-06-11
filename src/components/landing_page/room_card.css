@@ -21,3 +21,16 @@
 .room_information_container {
   padding: 10px;
 }
+.room_features_container {
+  font-family: -webkit-pictograph;
+  font-size: 15px;
+}
+.room_address_container {
+  text-align: right;
+  font-family: -webkit-pictograph;
+}
+.room_price_container {
+  font-family: -webkit-pictograph;
+  font-size: 30px;
+  padding-bottom: 5px;
+}

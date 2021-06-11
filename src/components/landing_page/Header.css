@@ -9,14 +9,14 @@
   padding: 5px 5px;
 }
 
-.search_bar {
+#search {
   all: unset;
   border-bottom: 1px solid #ffffff;
   color: #fff;
   padding: 5px;
 }
 
-.search_bar::placeholder {
+#search::placeholder {
   color: #fff;
 }
 

@@ -12,6 +12,7 @@ function Header(props) {
       var search_input = document.getElementById("search").value;
       console.log(`${search_input}`);
       document.getElementById("search").value = "";
+      props.send_address(search_input);
     }
   }
 
@@ -31,7 +32,7 @@ function Header(props) {
         <div className="search_bar_container">
           <div className="search_bar">
             <input
-              className="search_bar"
+              id="search"
               type="text"
               placeholder="Enter your location...."
               ref={searchValue}
