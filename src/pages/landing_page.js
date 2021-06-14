@@ -88,6 +88,7 @@ const LandingPage = (props) => {
         Search results for: {search}
       </h1>
       <RoomsList rooms={temp} />
+
       <AddRoomIcon />
     </>
   );

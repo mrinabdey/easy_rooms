@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import { Link, Redirect } from "react-router-dom";
 import AuthContext from "../../context/authcontext";
 import "./Header.css";
+import SideBar from "../common_components/Sidebar";
 
 function Header(props) {
   const searchValue = useRef();
@@ -42,13 +43,15 @@ function Header(props) {
         </div>
         <div className="auth_text_container">
           {ctx.isLoggedIn ? (
-            <div
+            <SideBar />
+          ) : (
+            /*<div
               className="logout_text auth_text"
               onClick={() => props.logoutHandler(false)}
             >
               Logout
             </div>
-          ) : (
+            */
             <>
               <Link to="/login" style={{ textDecoration: "none" }}>
                 <div className="login_text auth_text">Login</div>
