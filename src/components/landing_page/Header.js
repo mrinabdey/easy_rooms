@@ -16,6 +16,7 @@ function Header(props) {
       props.send_address(search_input);
     }
   }
+  const logoutHandler = () => props.logoutHandler(false);
 
   return (
     <div className="header_container_container">
@@ -43,7 +44,7 @@ function Header(props) {
         </div>
         <div className="auth_text_container">
           {ctx.isLoggedIn ? (
-            <SideBar />
+            <SideBar logoutHandler={logoutHandler} />
           ) : (
             /*<div
               className="logout_text auth_text"

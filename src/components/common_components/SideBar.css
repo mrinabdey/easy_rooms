@@ -54,3 +54,7 @@
   margin-bottom: 2rem;
   font-size: 25px;
 }
+
+.navbar-items a {
+  text-decoration: none;
+}

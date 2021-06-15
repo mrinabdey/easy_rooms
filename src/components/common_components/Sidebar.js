@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SideBar.css";
 
-const SideBar = () => {
+const SideBar = (props) => {
   const [sideBar, setSideBar] = useState(false);
 
   const showSideBar = () => setSideBar(!sideBar);
@@ -18,9 +19,15 @@ const SideBar = () => {
           </li>
           <div className="user-details">UserName</div>
           <div className="navbar-items">
-            <li className="navbar-item">Profile</li>
-            <li className="navbar-item">About</li>
-            <li className="navbar-item">Logout</li>
+            <Link to="/profile">
+              <li className="navbar-item">Profile</li>
+            </Link>
+            <Link to="/about">
+              <li className="navbar-item">About</li>
+            </Link>
+            <li className="navbar-item" onClick={props.logoutHandler}>
+              Logout
+            </li>
           </div>
         </ul>
       </nav>

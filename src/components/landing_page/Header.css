@@ -38,7 +38,9 @@
 .auth_text {
   display: inline;
   color: #fff;
-  padding: 0px 5px;
+  padding: 0px 3px;
+  font-size: 18px;
+  font-family: -webkit-pictograph;
 }
 
 .auth_text_container {

@@ -17,6 +17,8 @@ import LandingPage from "./pages/landing_page";
 import FoodPage from "./pages/food_page";
 import NotesPage from "./pages/notes_page";
 import MarketPage from "./pages/market_page";
+import Profile from "./pages/Profile";
+import About from "./pages/About";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -61,6 +63,12 @@ function App() {
             </Route>
             <Route exact path="/market">
               <MarketPage />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/about">
+              <About />
             </Route>
           </Switch>
         </Router>
