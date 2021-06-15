@@ -1,0 +1,37 @@
+.form-container {
+  margin-top: 1rem;
+}
+.profile-pic-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.fa-user-circle {
+  font-size: 90px;
+}
+
+.user-title-container {
+  font-family: -webkit-pictograph;
+  font-size: 20px;
+  margin-top: 1rem;
+}
+
+.user-detail-container {
+  font-family: -webkit-pictograph;
+  margin-left: 20px;
+}
+
+.edit-details-button {
+  width: 15%;
+  padding: 8px;
+}
+
+.edit-details-button-container {
+  margin-top: 2rem;
+  /* right: 1rem; */
+  margin-left: 10px;
+}
+
+.user-details-container {
+  margin-left: 10px;
+}

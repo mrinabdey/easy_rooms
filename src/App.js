@@ -19,6 +19,7 @@ import NotesPage from "./pages/notes_page";
 import MarketPage from "./pages/market_page";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -69,6 +70,9 @@ function App() {
             </Route>
             <Route exact path="/about">
               <About />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
             </Route>
           </Switch>
         </Router>
