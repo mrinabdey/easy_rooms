@@ -33,24 +33,31 @@ const Profile = () => {
             placeholder="Enter your name"
           />
 
-          <label className="user-title-container contact">Phone number: </label>
+          <label className="user-title-container location">Location: </label>
+          <input
+            className="user-detail-container"
+            ref={location}
+            type="text"
+            placeholder="Near SUndarbari"
+          />
+
+          <label className="user-title-container contact">
+            Contact Number:
+          </label>
           <input
             className="user-detail-container"
             ref={contact}
             type="number"
-            placeholder="9101191101"
+            placeholder="8136096856"
           />
 
-          <label className="user-title-container emailId">email id: </label>
+          <label className="user-title-container emailId">Email Id: </label>
           <input
             className="user-detail-container"
             ref={email}
             type="text"
             placeholder="abc@gmail.com"
           />
-
-          <label className="user-title-container location">Location: </label>
-          <input className="user-detail-container" ref={location} type="text" />
         </div>
         <div className="edit-details-button-container">
           <button className="edit-details-button" onClick={EditClickHandler}>
@@ -69,13 +76,13 @@ const Profile = () => {
         </div>
         <div className="user-details-container">
           <div className="user-title-container name">Name:</div>
-          <div className="user-detail-container">Aashis</div>
+          <div className="user-detail-container">Pankaj Sah</div>
           <div className="user-title-container location">Location:</div>
-          <div className="user-detail-container">XYZ</div>
+          <div className="user-detail-container">Near Masjid Sundarbari</div>
           <div className="user-title-container contact">Contact Number:</div>
-          <div className="user-detail-container">91</div>
+          <div className="user-detail-container">+918136096856</div>
           <div className="user-title-container emailId">Email Id:</div>
-          <div className="user-detail-container">aashischittawat123</div>
+          <div className="user-detail-container">52punk2017@gmail.com</div>
         </div>
         <div className="edit-details-button-container">
           <button className="edit-details-button" onClick={EditClickHandler}>

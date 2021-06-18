@@ -1,8 +1,20 @@
+import { useState } from "react";
 import "./room_card.css";
 
 const RoomCard = (props) => {
+  const [isCardClicked, setCardClicked] = useState(false);
+
+  const clickHandler = () => {
+    setCardClicked(!isCardClicked);
+    console.log(`Clicked ${props.room.address}`);
+  };
+
   return (
-    <div className="room_card_container">
+    <div
+      id="room-card-container"
+      className="room_card_container"
+      onClick={clickHandler}
+    >
       <div className="room_image_container">
         <img
           src={"https://easyrooms.herokuapp.com/" + props.room.imageUrl}
