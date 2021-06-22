@@ -1,0 +1,56 @@
+.full-room_card_container {
+    margin: 10px;
+  
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px #284759;
+  }
+  
+  .full-room_image_container {
+    width: 100%;
+  
+    overflow: hidden;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+  }
+  
+  .full-room_image {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .full-room_information_container {
+    padding: 10px;
+  }
+  .full-room_features_container {
+    font-family: -webkit-pictograph;
+    font-size: 15px;
+  }
+  .full-room_address_container {
+    text-align: right;
+    font-family: -webkit-pictograph;
+    padding: 5px 0;
+  }
+  .full-room_price_container {
+    font-family: -webkit-pictograph;
+    font-size: 30px;
+    padding-bottom: 5px;
+  }
+  .full-room_chat_container{
+      text-align: right;
+      padding: 8px 0;
+      font-size: 30px;
+  }
+  .full-room_favorite_button{
+      font-size: 30px;
+      padding: 8px 0;
+      flex-grow: 1;
+  }
+  .full-room_buttons_conatiner{
+      display: flex;
+      
+  }
+  .full-room_ad_poster{
+    font-family: -webkit-pictograph;
+  }
+
+  

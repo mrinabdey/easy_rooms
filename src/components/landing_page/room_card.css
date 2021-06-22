@@ -38,3 +38,24 @@
 .clicked {
   background-color: red;
 }
+.hidden{
+  display: none;
+}
+
+.room_chat_container{
+  text-align: right;
+  padding: 8px 0;
+  font-size: 30px;
+}
+.room_favorite_button{
+  font-size: 30px;
+  padding: 8px 0;
+  flex-grow: 1;
+}
+.room_buttons_conatiner{
+  display: flex;
+  
+}
+.room_ad_poster{
+font-family: -webkit-pictograph;
+}
