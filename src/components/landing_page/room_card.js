@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./room_card.css";
 import FullCard from "../../pages/FullCard";
+import { Link } from "react-router-dom";
 
 const RoomCard = (props) => {
   const [isCardClicked, setCardClicked] = useState(false);
@@ -24,7 +25,7 @@ const RoomCard = (props) => {
     
   };
 
-  return ( isCardClicked ? <FullCard room={props.room}/> :
+  return ( 
     <div
       id="room-card-container"
       className="room_card_container"
@@ -37,12 +38,14 @@ const RoomCard = (props) => {
           alt="This is an image of a room"
         />
       </div>
+      <Link to={{pathname: '/details', detailProps:{detail: props.room}}}>
       <div className="room_information_container">
         <div className="room_price_container">Rs. 5500</div>
         <div className="room_features_container">{props.room.features}</div>
         <div className="room_address_container">{props.room.address}</div>
        
       </div>
+      </Link>
     </div>
   );
 };

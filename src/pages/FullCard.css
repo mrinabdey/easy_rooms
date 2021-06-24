@@ -53,4 +53,10 @@
     font-family: -webkit-pictograph;
   }
 
-  
+
+  .full-room_details{
+    font-family: -webkit-pictograph;
+  }
+  .full-room_feature_button{
+    display: flex;
+  }

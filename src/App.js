@@ -20,7 +20,9 @@ import MarketPage from "./pages/market_page";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Chat from "./pages/Chat";
 import { useEffect, useState } from "react";
+import FullCard from "./pages/FullCard";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -74,6 +76,9 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
+            <Route exact path="/chat" component={Chat} />
+            <Route exact path="/details" component={FullCard} />
+            
           </Switch>
         </Router>
       </AuthContext.Provider>
