@@ -90,6 +90,7 @@ const AddRoomForm = (props) => {
         id="price_input"
         className="addroom_input"
         type="number"
+        accept="image/*"
         placeholder="0"
       />
       <div className="addroom_button_container">
