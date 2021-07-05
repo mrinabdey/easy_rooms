@@ -80,6 +80,7 @@ const AddRoomForm = (props) => {
         ref={imageFile}
         id="imageFile_input"
         className="addroom_input"
+        accept="image/*"
         type="file"
       />
       <label htmlFor="price_input" className="price_label addroom_label">
@@ -90,7 +91,6 @@ const AddRoomForm = (props) => {
         id="price_input"
         className="addroom_input"
         type="number"
-        accept="image/*"
         placeholder="0"
       />
       <div className="addroom_button_container">
