@@ -1,19 +1,18 @@
-import './FullCard.css';
-import { Link } from 'react-router-dom';
-import Header from '../components/landing_page/Header';
-import Navigation from '../components/landing_page/Navigation';
-import { useState } from 'react';
-
-const FullCard = (props) =>{
+import "./FullCard.css";
+import { Link } from "react-router-dom";
+import Header from "../components/landing_page/Header";
+import Navigation from "../components/landing_page/Navigation";
+import { useState } from "react";
+import { GrLocation } from "react-icons/gr";
+import { BiRupee } from "react-icons/bi";
+const FullCard = (props) => {
   //const [data, setData] = useState("");
   //setData(props.location.detailProps.detail);
 
   const user = "EasyRooms";
 
-
-  console.log("details: ",props.location.detailProps.detail);
+  //console.log("details: ", props.location.detailProps.detail);
   //console.log("data: ", data);
-
 
   return (
     <div>
@@ -21,46 +20,50 @@ const FullCard = (props) =>{
       <Navigation />
       <div className="full-room_total_details">
         <div className="full-room_image">
-            <img
-            src={"https://easyrooms.herokuapp.com/" + props.location.detailProps.detail.imageUrl}
+          <img
+            src={
+              "https://easyrooms.herokuapp.com/" +
+              props.location.detailProps.detail.imageUrl
+            }
             className="full-room_image"
             alt="This is an image of a room"
-            />
+            FaRupeeSign
+          />
         </div>
         <div className="full-room_details">
-          <div className="full-room_title">
-                <h1>Paying Guest</h1>
-          </div>
           <div className="full-room_price">
-                Rs. 5500
+            <BiRupee /> 5500
           </div>
+          <div className="full-room_title">Paying Guest</div>
           <div className="full-room_features">
-              <div className="full-room_features_container">{props.location.detailProps.detail.features} displaying in full view mode</div>
+            <div className="full-room_features_container">
+              {props.location.detailProps.detail.features} displaying in full
+              view mode
+            </div>
           </div>
           <div className="full-room_address">
-              <div className="full-room_address_container">{props.location.detailProps.detail.address}</div>
+            <div className="full-room_address_container">
+              <GrLocation />
+              {props.location.detailProps.detail.address}
+            </div>
           </div>
-          <div className="full-room_posted">
-              By: {user}
-          </div>
-          <div className="full-room_posted_contact">
-              Ph no:- +917002528767
-          </div>
-
+          <div className="full-room_posted">By: {user}</div>
+          <div className="full-room_posted_contact">Ph no:- +917002528767</div>
         </div>
-
       </div>
       <div className="full-room_feature_button">
-          <div className="full-room_favorite_button"><i class="far fa-bookmark active" ></i></div>
-          <div className="full-room_chat_container"><Link to={{pathname: '/chat', chatProps:{name: user}}}><i class="fab fa-facebook-messenger"></i></Link></div>
+        <div className="full-room_favorite_button">
+          <i class="far fa-bookmark active"></i>
+        </div>
+        <div className="full-room_chat_container">
+          <Link to={{ pathname: "/chat", chatProps: { name: user } }}>
+            <i class="fab fa-facebook-messenger"></i>
+          </Link>
+        </div>
       </div>
     </div>
 
-
-
-
-
-        /*<div
+    /*<div
       id="full-room-card-container"
       className="full-room_card_container"
       
@@ -85,7 +88,7 @@ const FullCard = (props) =>{
       </div>
     </div>
     */
-    )
-}
+  );
+};
 
 export default FullCard;
