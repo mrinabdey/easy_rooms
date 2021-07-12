@@ -5,6 +5,7 @@ import Navigation from "../components/landing_page/Navigation";
 import { useState } from "react";
 import { GrLocation } from "react-icons/gr";
 import { BiRupee } from "react-icons/bi";
+import { GrNext, GrPrevious } from "react-icons/gr";
 const FullCard = (props) => {
   //const [data, setData] = useState("");
   //setData(props.location.detailProps.detail);
@@ -23,7 +24,7 @@ const FullCard = (props) => {
           <img
             src={
               "https://easyrooms.herokuapp.com/" +
-              props.location.detailProps.detail.imageUrl
+              props.location.detailProps.detail.imageUrls[0]
             }
             className="full-room_image"
             alt="This is an image of a room"
@@ -32,7 +33,10 @@ const FullCard = (props) => {
         </div>
         <div className="full-room_details">
           <div className="full-room_price">
-            <BiRupee /> 5500
+            <div className="full-room_rupee_icon">
+              <BiRupee />
+            </div>
+            5500
           </div>
           <div className="full-room_title">Paying Guest</div>
           <div className="full-room_features">

@@ -14,8 +14,9 @@
 }
 
 .full-room_image {
-  width: 100%;
+  width: 95%;
   object-fit: cover;
+  text-align: -webkit-right;
 }
 
 .full-room_information_container {
@@ -60,6 +61,13 @@
 
 .full-room_price {
   font-size: 35px;
-
+  display: flex;
   font-family: -webkit-pictograph;
+}
+
+.full-room_total_details {
+  margin-top: 5px;
+}
+.full-room_rupee_icon {
+  font-size: 50px;
 }

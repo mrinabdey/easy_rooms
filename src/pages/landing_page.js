@@ -12,7 +12,7 @@ const LandingPage = (props) => {
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState([]);
   // const url = 'http://localhost:4000/features/get_rooms';
-  const url = "https://easyrooms.herokuapp.com/features/get_rooms";
+  const url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
 
   const fetchRoomsHandler = () => {
     setIsLoading(true);
