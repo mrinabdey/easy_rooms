@@ -29,6 +29,12 @@ const SideBar = (props) => {
             <Link to="/contact">
               <li className="navbar-item">Contact Us</li>
             </Link>
+            <Link to="/bookmarks">
+              <li className="navbar-item">Bookmarks</li>
+            </Link>
+            <Link to="/chat">
+              <li className="navbar-item">Your Chats</li>
+            </Link>
             <li className="navbar-item" onClick={props.logoutHandler}>
               Logout
             </li>

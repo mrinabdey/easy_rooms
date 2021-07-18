@@ -6,7 +6,12 @@ import { useState } from "react";
 import { GrLocation } from "react-icons/gr";
 import { BiRupee } from "react-icons/bi";
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { BsBookmark, BsBookmarkFill, BsChatSquare } from "react-icons/bs";
 const FullCard = (props) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  //this needs to be set using the json object's bookmark section
+
   //const [data, setData] = useState("");
   //setData(props.location.detailProps.detail);
 
@@ -14,7 +19,14 @@ const FullCard = (props) => {
 
   //console.log("details: ", props.location.detailProps.detail);
   //console.log("data: ", data);
-
+  const bookmarkClickHandler = () => {
+    //console.log(`isClicked prev = ${isClicked}`);
+    setIsClicked(!isClicked);
+    //console.log(`isClicked now = ${isClicked}`);
+    !isClicked
+      ? alert("Bookmark added successfully!!")
+      : alert("Bookmark removed successfully!!");
+  };
   return (
     <div>
       <Header />
@@ -57,11 +69,15 @@ const FullCard = (props) => {
       </div>
       <div className="full-room_feature_button">
         <div className="full-room_favorite_button">
-          <i class="far fa-bookmark active"></i>
+          {isClicked ? (
+            <BsBookmarkFill onClick={bookmarkClickHandler} />
+          ) : (
+            <BsBookmark onClick={bookmarkClickHandler} />
+          )}
         </div>
         <div className="full-room_chat_container">
           <Link to={{ pathname: "/chat", chatProps: { name: user } }}>
-            <i class="fab fa-facebook-messenger"></i>
+            <BsChatSquare />
           </Link>
         </div>
       </div>

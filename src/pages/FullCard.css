@@ -36,14 +36,13 @@
   padding-bottom: 5px;
 }
 .full-room_chat_container {
-  text-align: right;
-  padding: 8px 0;
+  padding: 10px 0;
   font-size: 30px;
+  margin-left: 10%;
 }
 .full-room_favorite_button {
   font-size: 30px;
   padding: 8px 0;
-  flex-grow: 1;
 }
 .full-room_buttons_conatiner {
   display: flex;

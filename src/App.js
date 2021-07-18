@@ -23,6 +23,7 @@ import Contact from "./pages/Contact";
 import Chat from "./pages/Chat";
 import { useEffect, useState } from "react";
 import FullCard from "./pages/FullCard";
+import Bookmarks from "./pages/Bookmarks";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -76,9 +77,11 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
+            <Route exact path="/bookmarks">
+              <Bookmarks />
+            </Route>
             <Route exact path="/chat" component={Chat} />
             <Route exact path="/details" component={FullCard} />
-            
           </Switch>
         </Router>
       </AuthContext.Provider>

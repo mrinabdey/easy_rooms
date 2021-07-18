@@ -1,40 +1,22 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "./static/css/main.2247c89b.chunk.css",
-    "main.js": "./static/js/main.bcf4ea1e.chunk.js",
-    "main.js.map": "./static/js/main.bcf4ea1e.chunk.js.map",
-=======
-    "main.css": "./static/css/main.aea496a6.chunk.css",
-    "main.js": "./static/js/main.7c650fe2.chunk.js",
-    "main.js.map": "./static/js/main.7c650fe2.chunk.js.map",
->>>>>>> 967f8e6682cabf23603524fc18b33379b03f71a0
+    "main.css": "./static/css/main.bc92d1db.chunk.css",
+    "main.js": "./static/js/main.aa819af6.chunk.js",
+    "main.js.map": "./static/js/main.aa819af6.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.bca41576.js",
     "runtime-main.js.map": "./static/js/runtime-main.bca41576.js.map",
-    "static/js/2.1fbeabc1.chunk.js": "./static/js/2.1fbeabc1.chunk.js",
-    "static/js/2.1fbeabc1.chunk.js.map": "./static/js/2.1fbeabc1.chunk.js.map",
+    "static/js/2.0a18f2e2.chunk.js": "./static/js/2.0a18f2e2.chunk.js",
+    "static/js/2.0a18f2e2.chunk.js.map": "./static/js/2.0a18f2e2.chunk.js.map",
     "index.html": "./index.html",
-<<<<<<< HEAD
-    "static/css/main.2247c89b.chunk.css.map": "./static/css/main.2247c89b.chunk.css.map",
-    "static/js/2.1fbeabc1.chunk.js.LICENSE.txt": "./static/js/2.1fbeabc1.chunk.js.LICENSE.txt",
-    "static/js/main.bcf4ea1e.chunk.js.LICENSE.txt": "./static/js/main.bcf4ea1e.chunk.js.LICENSE.txt",
-=======
-    "static/css/main.aea496a6.chunk.css.map": "./static/css/main.aea496a6.chunk.css.map",
-    "static/js/2.68593e56.chunk.js.LICENSE.txt": "./static/js/2.68593e56.chunk.js.LICENSE.txt",
-    "static/js/main.7c650fe2.chunk.js.LICENSE.txt": "./static/js/main.7c650fe2.chunk.js.LICENSE.txt",
->>>>>>> 967f8e6682cabf23603524fc18b33379b03f71a0
+    "static/css/main.bc92d1db.chunk.css.map": "./static/css/main.bc92d1db.chunk.css.map",
+    "static/js/2.0a18f2e2.chunk.js.LICENSE.txt": "./static/js/2.0a18f2e2.chunk.js.LICENSE.txt",
+    "static/js/main.aa819af6.chunk.js.LICENSE.txt": "./static/js/main.aa819af6.chunk.js.LICENSE.txt",
     "static/media/all.css": "./static/media/fa-solid-900.efbd5d20.eot"
   },
   "entrypoints": [
     "static/js/runtime-main.bca41576.js",
-<<<<<<< HEAD
-    "static/js/2.1fbeabc1.chunk.js",
-    "static/css/main.2247c89b.chunk.css",
-    "static/js/main.bcf4ea1e.chunk.js"
-=======
-    "static/js/2.68593e56.chunk.js",
-    "static/css/main.aea496a6.chunk.css",
-    "static/js/main.7c650fe2.chunk.js"
->>>>>>> 967f8e6682cabf23603524fc18b33379b03f71a0
+    "static/js/2.0a18f2e2.chunk.js",
+    "static/css/main.bc92d1db.chunk.css",
+    "static/js/main.aa819af6.chunk.js"
   ]
 }
