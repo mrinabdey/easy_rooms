@@ -2,46 +2,62 @@ import "./FullCard.css";
 import { Link } from "react-router-dom";
 import Header from "../components/landing_page/Header";
 import Navigation from "../components/landing_page/Navigation";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { GrLocation } from "react-icons/gr";
 import { BiRupee } from "react-icons/bi";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { BsBookmark, BsBookmarkFill, BsChatSquare } from "react-icons/bs";
+
 const FullCard = (props) => {
   const [isClicked, setIsClicked] = useState(false);
-
-  //this needs to be set using the json object's bookmark section
-
-  //const [data, setData] = useState("");
-  //setData(props.location.detailProps.detail);
-
   const user = "EasyRooms";
 
-  //console.log("details: ", props.location.detailProps.detail);
-  //console.log("data: ", data);
   const bookmarkClickHandler = () => {
-    //console.log(`isClicked prev = ${isClicked}`);
     setIsClicked(!isClicked);
-    //console.log(`isClicked now = ${isClicked}`);
     !isClicked
       ? alert("Bookmark added successfully!!")
       : alert("Bookmark removed successfully!!");
   };
+
+  const [currImage, setcurrImage] = useState(0);
+  const subSlides = () => {
+    console.log("slideprev ");
+    if (currImage == 0) setcurrImage(3);
+    else {
+      //currImage = currImage + val;
+      setcurrImage(currImage - 1);
+    }
+    console.log("slidecurr " + currImage);
+  };
+
+  const plusSlides = () => {
+    console.log("slidecurr " + currImage);
+    if (currImage == 4) setcurrImage(0);
+    else setcurrImage(currImage + 1);
+    console.log("slidenext " + currImage);
+  };
+
   return (
     <div>
       <Header />
       <Navigation />
       <div className="full-room_total_details">
         <div className="full-room_image">
+          <a className="prev" onClick={subSlides}>
+            &#10094;
+          </a>
           <img
             src={
               "https://easyrooms.herokuapp.com/" +
-              props.location.detailProps.detail.imageUrls[0]
+              props.location.detailProps.detail.imageUrls[currImage]
             }
-            className="full-room_image"
+            className="full-room_image mySlides fade"
             alt="This is an image of a room"
-            FaRupeeSign
           />
+
+          <div className="next" onClick={plusSlides}>
+            &#10095;
+          </div>
         </div>
         <div className="full-room_details">
           <div className="full-room_price">
