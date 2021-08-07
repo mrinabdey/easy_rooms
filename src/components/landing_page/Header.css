@@ -1,5 +1,5 @@
 .header_container_container {
-  padding: 10px 2px;
+  padding: 0px 2px;
   background-color: var(--blue);
 }
 
@@ -46,4 +46,9 @@
 .auth_text_container {
   font-size: 26px;
   color: #ffffff;
+}
+@media (max-width: 500px) {
+  .header_container_container {
+    padding: 10px 2px;
+  }
 }

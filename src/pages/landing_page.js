@@ -77,10 +77,7 @@ const LandingPage = (props) => {
     </>
   ) : (
     <>
-      <div
-        className="header_navbar_container"
-        style={{ position: "fixed", top: "0px", left: "0px", width: "100vw" }}
-      >
+      <div className="header_navbar_container">
         <Header send_address={address_handler} logoutHandler={logoutHandler} />
         <Navigation />
       </div>

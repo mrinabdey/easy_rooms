@@ -3,6 +3,7 @@
 
   border-radius: 10px;
   box-shadow: 1px 1px 7px #284759;
+  width: 20%;
 }
 
 .room_image_container {
@@ -38,27 +39,32 @@
 .clicked {
   background-color: red;
 }
-.hidden{
+.hidden {
   display: none;
 }
 
-.room_chat_container{
+.room_chat_container {
   text-align: right;
   padding: 8px 0;
   font-size: 30px;
 }
-.room_favorite_button{
+.room_favorite_button {
   font-size: 30px;
   padding: 8px 0;
   flex-grow: 1;
 }
-.room_buttons_conatiner{
+.room_buttons_conatiner {
   display: flex;
-  
 }
-.room_ad_poster{
-font-family: -webkit-pictograph;
+.room_ad_poster {
+  font-family: -webkit-pictograph;
 }
-a{
+a {
   text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .room_card_container {
+    width: auto;
+  }
 }

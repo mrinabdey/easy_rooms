@@ -55,9 +55,9 @@ const FullCard = (props) => {
             alt="This is an image of a room"
           />
 
-          <div className="next" onClick={plusSlides}>
+          <a className="next" onClick={plusSlides}>
             &#10095;
-          </div>
+          </a>
         </div>
         <div className="full-room_details">
           <div className="full-room_price">

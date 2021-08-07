@@ -14,8 +14,8 @@
 }
 
 .full-room_image {
-  /* width: 94%; */
-  object-fit: cover;
+  width: 50%;
+  /* object-fit: cover; */
   align-items: center;
   display: flex;
 }
@@ -56,6 +56,7 @@
 
 .full-room_details {
   font-family: -webkit-pictograph;
+  text-align: -webkit-left;
 }
 .full-room_feature_button {
   display: flex;
@@ -69,6 +70,7 @@
 
 .full-room_total_details {
   margin-top: 5px;
+  text-align: -webkit-center;
 }
 .full-room_rupee_icon {
   font-size: 50px;
@@ -111,5 +113,11 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .full-room_image {
+    width: auto;
   }
 }
