@@ -53,6 +53,11 @@ const FullCard = (props) => {
             }
             className="full-room_image mySlides fade"
             alt="This is an image of a room"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "http://www.wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg";
+            }}
           />
 
           <a className="next" onClick={plusSlides}>

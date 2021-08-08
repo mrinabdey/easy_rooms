@@ -37,6 +37,11 @@ const RoomCard = (props) => {
           src={"https://easyrooms.herokuapp.com/" + props.room.imageUrls[0]}
           className="room_image"
           alt="This is an image of a room"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "http://www.wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg";
+          }}
         />
       </div>
       <Link to={{ pathname: "/details", detailProps: { detail: props.room } }}>

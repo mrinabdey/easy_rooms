@@ -1,6 +1,7 @@
 .rooms_list {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
 }
 
 @media (max-width: 500px) {
