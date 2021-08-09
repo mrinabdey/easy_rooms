@@ -19,10 +19,12 @@ const FullCard = (props) => {
       : alert("Bookmark removed successfully!!");
   };
 
+  const sz = props.location.detailProps.detail.imageUrls.length;
+  console.log(`size is ${sz}`);
   const [currImage, setcurrImage] = useState(0);
   const subSlides = () => {
     console.log("slideprev ");
-    if (currImage == 0) setcurrImage(3);
+    if (currImage == 0) setcurrImage(sz);
     else {
       //currImage = currImage + val;
       setcurrImage(currImage - 1);
@@ -32,7 +34,7 @@ const FullCard = (props) => {
 
   const plusSlides = () => {
     console.log("slidecurr " + currImage);
-    if (currImage == 4) setcurrImage(0);
+    if (currImage == sz) setcurrImage(0);
     else setcurrImage(currImage + 1);
     console.log("slidenext " + currImage);
   };
