@@ -7,10 +7,14 @@ const LoginPage = (props) => {
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const history = useHistory();
 
-    const loginHandler = (isLoggedIn) => {
-        props.loggedIn(isLoggedIn);
+    const loginHandler = (email) => {
+        props.loggedIn(email);
         history.push('/');
     }
+
+    // const userHandler = (email) => {
+    //     props.userHandler(email);
+    // }
 
     // useEffect(() => {
     //     props.loggedIn(isLoggedIn);

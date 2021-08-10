@@ -18,8 +18,8 @@ const LoginForm = (props) => {
     const [message, setMessage] = useState('');
     // const [token, setToken] = useState(null);
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const url = 'http://localhost:4000/auth/login';
-    const url = 'https://easyrooms.herokuapp.com/auth/login';
+    const url = 'http://localhost:4000/auth/login';
+    // const url = 'https://easyrooms.herokuapp.com/auth/login';
 
     // useEffect(() => {
     //     props.loggedIn(isLoggedIn);
@@ -50,9 +50,11 @@ const LoginForm = (props) => {
         .then(res => {
             // (localStorage.getItem('isLoggedIn') === 'true') ? localStorage.setItem('token', res) : setMessage(res);
             if(localStorage.getItem('isLoggedIn') === 'true') {
-                localStorage.setItem('token', res);
+                localStorage.setItem('token', res.token);
+                localStorage.setItem('user', res.email);
+                localStorage.setItem('name', res.name);
                 // setMessage('');
-                props.loggedIn(true);
+                props.loggedIn(res.email);
             } else {
                 setMessage(res);
             }

@@ -27,6 +27,7 @@ import Bookmarks from "./pages/Bookmarks";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     localStorage.getItem("isLoggedIn") == "true"
@@ -34,27 +35,32 @@ function App() {
       : setIsLoggedIn(false);
   }, []);
 
-  const loginHandler = (loggedIn) => {
-    setIsLoggedIn(loggedIn);
+  // const userHandler = (email) => {
+  //   setUser(email);
+  // }
+
+  const loginHandler = (email) => {
+    setIsLoggedIn(true);
+    setUser(email);
   };
 
   const logoutHandler = (loggedIn) => {
-    setIsLoggedIn(loggedIn);
+    setIsLoggedIn(false);
   };
 
   return (
     <>
-      <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
+      <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, user: user }}>
         <Router>
           <Switch>
             <Route exact path="/">
-              <LandingPage logoutHandler={logoutHandler} />
+              <LandingPage logoutHandler={logoutHandler} user/>
             </Route>
             <Route exact path="/add_room">
               <AddRoomPage />
             </Route>
             <Route exact path="/login">
-              <LoginPage loggedIn={loginHandler} />
+              <LoginPage loggedIn={loginHandler}/>
             </Route>
             <Route exact path="/signup">
               <SignupPage />

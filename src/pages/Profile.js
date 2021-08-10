@@ -1,10 +1,33 @@
 import "./Profile.css";
 import Navigation from "../components/landing_page/Navigation";
 import Header from "../components/landing_page/Header";
-import { useRef, useState } from "react";
+import AuthContext from "../context/authcontext";
+import { useRef, useState, useContext, useEffect } from "react";
 
 const Profile = () => {
   const [isEditClick, setEditClick] = useState(false);
+  const [user, setUser] = useState({});
+  const ctx = useContext(AuthContext);
+  const username = localStorage.getItem('user');
+  const url = `http://localhost:4000/auth/user/${username}`
+
+  const fetchUser = () => {
+    fetch(url, {
+      method: 'GET',
+    })
+    .then(res => res.json())
+    .then(res => {
+      setUser(res);
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  useEffect(() => {
+    fetchUser();
+  },[]);
 
   const userName = useRef();
   const location = useRef();
@@ -76,13 +99,13 @@ const Profile = () => {
         </div>
         <div className="user-details-container">
           <div className="user-title-container name">Name:</div>
-          <div className="user-detail-container">Pankaj Sah</div>
+          <div className="user-detail-container">{user.name}</div>
           <div className="user-title-container location">Location:</div>
-          <div className="user-detail-container">Near Masjid Sundarbari</div>
+          <div className="user-detail-container">{user.address}</div>
           <div className="user-title-container contact">Contact Number:</div>
-          <div className="user-detail-container">+918136096856</div>
+          <div className="user-detail-container">{user.contact}</div>
           <div className="user-title-container emailId">Email Id:</div>
-          <div className="user-detail-container">52punk2017@gmail.com</div>
+          <div className="user-detail-container">{user.email}</div>
         </div>
         <div className="edit-details-button-container">
           <button className="edit-details-button" onClick={EditClickHandler}>

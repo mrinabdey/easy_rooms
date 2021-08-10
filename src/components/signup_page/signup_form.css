@@ -1,12 +1,3 @@
-.signup_form_container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
 .message_container {
     position: absolute;
     width: 100%;
@@ -16,8 +7,17 @@
     color: black;
 }
 
-.email_input, .password_input {
-    width: 80vw;
+.signup_form_container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+}
+
+.signup_input {
+    width: 90%;
     height: 40px;
     border: 1px solid var(--blue);
     border-radius: 20px;

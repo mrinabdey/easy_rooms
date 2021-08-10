@@ -7,6 +7,7 @@ const SideBar = (props) => {
   const [sideBar, setSideBar] = useState(false);
 
   const showSideBar = () => setSideBar(!sideBar);
+  const username = localStorage.getItem("name");
 
   return (
     <div>
@@ -18,7 +19,7 @@ const SideBar = (props) => {
           <li className="navbar-toggle">
             <i class="fas fa-user-circle"></i>
           </li>
-          <div className="user-details">Pankaj Sah</div>
+          <div className="user-details">{username}</div>
           <div className="navbar-items">
             <Link to="/profile">
               <li className="navbar-item">Profile</li>

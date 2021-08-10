@@ -11,8 +11,8 @@ const LandingPage = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState([]);
-  // const url = 'http://localhost:4000/features/get_rooms';
-  const url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
+  const url = 'http://localhost:4000/features/get_rooms/0';
+  // const url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
 
   const fetchRoomsHandler = () => {
     setIsLoading(true);
@@ -67,6 +67,7 @@ const LandingPage = (props) => {
     props.logoutHandler(loggedIn);
     localStorage.setItem("isLoggedIn", false);
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
   };
 
   return isLoading ? (
