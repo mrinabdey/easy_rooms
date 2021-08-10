@@ -18,8 +18,8 @@ const LoginForm = (props) => {
     const [message, setMessage] = useState('');
     // const [token, setToken] = useState(null);
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const url = 'http://localhost:4000/auth/login';
-    // const url = 'https://easyrooms.herokuapp.com/auth/login';
+    // const url = 'http://localhost:4000/auth/login';
+    const url = 'https://easyrooms.herokuapp.com/auth/login';
 
     // useEffect(() => {
     //     props.loggedIn(isLoggedIn);

@@ -19,8 +19,8 @@ const SignupForm = () => {
     const password = useRef();
     const confirmPassword = useRef();
     const [message, setMessage] = useState('');
-    const url = 'http://localhost:4000/auth/signup';
-    // const url = 'https://easyrooms.herokuapp.com/auth/signup';
+    // const url = 'http://localhost:4000/auth/signup';
+    const url = 'https://easyrooms.herokuapp.com/auth/signup';
 
     // const passwordIconHandler = () => {
     //     if(password.current.value !== confirmPassword.current.value) {

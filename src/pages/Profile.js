@@ -9,7 +9,7 @@ const Profile = () => {
   const [user, setUser] = useState({});
   const ctx = useContext(AuthContext);
   const username = localStorage.getItem('user');
-  const url = `http://localhost:4000/auth/user/${username}`
+  const url = `https://easyrooms.herokuapp.com/auth/user/${username}`
 
   const fetchUser = () => {
     fetch(url, {
