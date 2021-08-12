@@ -5,14 +5,18 @@ import RoomsList from "../components/landing_page/rooms_list";
 import AddRoomIcon from "../components/landing_page/AddRoomIcon";
 import LoadingIcon from "../components/common_components/LoadingIcon";
 import "./landing_page.css";
+import mode from '../mode';
 
 const LandingPage = (props) => {
   const [rooms, setRooms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState([]);
-  // const url = 'http://localhost:4000/features/get_rooms/0';
-  const url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
+  let url;
+  if(mode)
+  url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
+  else
+  url = 'http://localhost:4000/features/get_rooms/0';
 
   const fetchRoomsHandler = () => {
     setIsLoading(true);

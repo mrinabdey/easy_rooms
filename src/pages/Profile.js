@@ -3,13 +3,19 @@ import Navigation from "../components/landing_page/Navigation";
 import Header from "../components/landing_page/Header";
 import AuthContext from "../context/authcontext";
 import { useRef, useState, useContext, useEffect } from "react";
+import mode from '../mode';
+
 
 const Profile = () => {
   const [isEditClick, setEditClick] = useState(false);
   const [user, setUser] = useState({});
   const ctx = useContext(AuthContext);
   const username = localStorage.getItem("user");
-  const url = `https://easyrooms.herokuapp.com/auth/user/${username}`;
+  let url;
+  if(mode)
+    url = `https://easyrooms.herokuapp.com/auth/user/${username}`;
+  else
+    url = `http://localhost:4000/auth/user/${username}`;
 
   const fetchUser = () => {
     fetch(url, {

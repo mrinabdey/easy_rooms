@@ -7,17 +7,79 @@ import { GrLocation } from "react-icons/gr";
 import { BiRupee } from "react-icons/bi";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { BsBookmark, BsBookmarkFill, BsChatSquare } from "react-icons/bs";
+import mode from '../mode';
 
 const FullCard = (props) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const user = "EasyRooms";
+  let bookmarkStatus = false;
+  const id = props.location.detailProps.detail._id;
+  let bookmarks = localStorage.getItem('bookmarks');
+  let bookmarksList = bookmarks.split(',');
+  if(bookmarksList.includes(id)) {
+    bookmarkStatus = true;
+  }
+  const [isClicked, setIsClicked] = useState(bookmarkStatus);
+  const user = localStorage.getItem('name');
+  const email = localStorage.getItem('email');
+  let addBookmarkUrl;
+  let removeBookmarkUrl;
 
-  const bookmarkClickHandler = () => {
-    setIsClicked(!isClicked);
-    !isClicked
-      ? alert("Bookmark added successfully!!")
-      : alert("Bookmark removed successfully!!");
-  };
+  if(mode) {
+    addBookmarkUrl = 'https://easyrooms.herokuapp.com/features/add_bookmark';
+    removeBookmarkUrl = 'https://easyrooms.herokuapp.com/features/remove_bookmark';
+  }
+
+  else {
+    addBookmarkUrl = 'http://localhost:4000/features/add_bookmark';
+    removeBookmarkUrl = 'http://localhost:4000/features/remove_bookmark';
+  }
+
+  const addBookmarkHandler = () => {
+    setIsClicked(true);
+    bookmarksList.push(id);
+    localStorage.setItem('bookmarks', bookmarksList);
+    console.log("add",id,email);
+    fetch(addBookmarkUrl, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        'roomId': id, 
+        'email': email,
+      })
+    })
+    .then(res => res.json())
+    .then(res => {
+      alert(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+  
+  const removeBookmarkHandler = () => {
+    setIsClicked(false);
+    let newBookmarksList = bookmarksList.filter(bId => bId != id);
+    localStorage.setItem('bookmarks', newBookmarksList);
+    console.log("remove",id,email);
+    fetch(removeBookmarkUrl, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        'roomId': id, 
+        'email': email,
+      })
+    })
+    .then(res => res.json())
+    .then(res => {
+      alert(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 
   const sz = props.location.detailProps.detail.imageUrls.length;
   console.log(`size is ${sz}`);
@@ -93,9 +155,9 @@ const FullCard = (props) => {
       <div className="full-room_feature_button">
         <div className="full-room_favorite_button">
           {isClicked ? (
-            <BsBookmarkFill onClick={bookmarkClickHandler} />
+            <BsBookmarkFill onClick={removeBookmarkHandler} />
           ) : (
-            <BsBookmark onClick={bookmarkClickHandler} />
+            <BsBookmark onClick={addBookmarkHandler} />
           )}
         </div>
         <div className="full-room_chat_container">

@@ -3,6 +3,7 @@ import AuthContext from "../../context/authcontext";
 import CustomButton from "../common_components/CustomButton";
 import "./addroom_form.css";
 import { useHistory } from "react-router-dom";
+import mode from '../../mode';
 
 const AddRoomForm = (props) => {
   const ctx = useContext(AuthContext);
@@ -13,8 +14,11 @@ const AddRoomForm = (props) => {
   const title = useRef();
   const price = useRef();
   // const [isLoading, setIsLoading] = useState(false);
-  const url = "https://easyrooms.herokuapp.com/features/add_room";
-  // const url = 'http://localhost:4000/features/add_room';
+  let url;
+  if(mode)
+    url = "https://easyrooms.herokuapp.com/features/add_room";
+  else
+    url = 'http://localhost:4000/features/add_room';
 
   const addRoomFormHandler = () => {
     const formData = new FormData();

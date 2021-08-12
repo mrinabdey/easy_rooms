@@ -11,6 +11,7 @@ import '../../fontawesome-free-5.15.3-web/js/all';
 import CustomButton from '../common_components/CustomButton';
 import SignupPage from '../../pages/signup_page';
 import LoginPage from '../../pages/login_page';
+import mode from '../../mode';
 
 const LoginForm = (props) => {
     const email = useRef();
@@ -18,16 +19,11 @@ const LoginForm = (props) => {
     const [message, setMessage] = useState('');
     // const [token, setToken] = useState(null);
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const url = 'http://localhost:4000/auth/login';
-    const url = 'https://easyrooms.herokuapp.com/auth/login';
-
-    // useEffect(() => {
-    //     props.loggedIn(isLoggedIn);
-    // }, [setIsLoggedIn]);
-
-    // useEffect(() => {
-    //     localStorage.setItem('token', token);
-    // }, [token])
+    let url;
+    if(mode)
+        url = 'https://easyrooms.herokuapp.com/auth/login';
+    else
+        url = 'http://localhost:4000/auth/login';
 
     const loginFormHandler = () => {
         fetch(url, {
@@ -42,7 +38,6 @@ const LoginForm = (props) => {
         })
         .then(res => {
             if(parseInt(res.status) === 200) {
-                // setIsLoggedIn(true);
                 localStorage.setItem('isLoggedIn', true);
             }
             return res.json();
@@ -51,8 +46,9 @@ const LoginForm = (props) => {
             // (localStorage.getItem('isLoggedIn') === 'true') ? localStorage.setItem('token', res) : setMessage(res);
             if(localStorage.getItem('isLoggedIn') === 'true') {
                 localStorage.setItem('token', res.token);
-                localStorage.setItem('user', res.email);
+                localStorage.setItem('email', res.email);
                 localStorage.setItem('name', res.name);
+                localStorage.setItem('bookmarks', res.bookmarks);
                 // setMessage('');
                 props.loggedIn(res.email);
             } else {

@@ -10,6 +10,7 @@ import './signup_form.css';
 import '../../fontawesome-free-5.15.3-web/css/all.css';
 import '../../fontawesome-free-5.15.3-web/js/all';
 import CustomButton from '../common_components/CustomButton';
+import mode from '../../mode';
 
 const SignupForm = () => {
     const name = useRef();
@@ -19,8 +20,11 @@ const SignupForm = () => {
     const password = useRef();
     const confirmPassword = useRef();
     const [message, setMessage] = useState('');
-    // const url = 'http://localhost:4000/auth/signup';
-    const url = 'https://easyrooms.herokuapp.com/auth/signup';
+    let url;
+    if(mode)
+        url = 'https://easyrooms.herokuapp.com/auth/signup';
+    else
+        url = 'http://localhost:4000/auth/signup';
 
     // const passwordIconHandler = () => {
     //     if(password.current.value !== confirmPassword.current.value) {
