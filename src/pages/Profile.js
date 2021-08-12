@@ -8,26 +8,26 @@ const Profile = () => {
   const [isEditClick, setEditClick] = useState(false);
   const [user, setUser] = useState({});
   const ctx = useContext(AuthContext);
-  const username = localStorage.getItem('user');
-  const url = `https://easyrooms.herokuapp.com/auth/user/${username}`
+  const username = localStorage.getItem("user");
+  const url = `https://easyrooms.herokuapp.com/auth/user/${username}`;
 
   const fetchUser = () => {
     fetch(url, {
-      method: 'GET',
+      method: "GET",
     })
-    .then(res => res.json())
-    .then(res => {
-      setUser(res);
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    })
-  }
+      .then((res) => res.json())
+      .then((res) => {
+        setUser(res);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     fetchUser();
-  },[]);
+  }, []);
 
   const userName = useRef();
   const location = useRef();
@@ -37,6 +37,7 @@ const Profile = () => {
   const EditClickHandler = () => {
     setEditClick(true);
   };
+  console.log(`values: ${user.name}`);
 
   return isEditClick ? (
     <div className="profile-container">

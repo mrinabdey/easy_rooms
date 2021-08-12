@@ -10,7 +10,7 @@ const SideBar = (props) => {
   const username = localStorage.getItem("name");
 
   return (
-    <div>
+    <div className="navbar-icon-container">
       <div className="navbar" onClick={showSideBar}>
         <i class="fas fa-bars"></i>
       </div>
@@ -21,6 +21,14 @@ const SideBar = (props) => {
           </li>
           <div className="user-details">{username}</div>
           <div className="navbar-items">
+            <div className="show-mob">
+              <Link to="/bookmarks">
+                <li className="navbar-item">Bookmarks</li>
+              </Link>
+              <Link to="/chat">
+                <li className="navbar-item">Chats</li>
+              </Link>
+            </div>
             <Link to="/profile">
               <li className="navbar-item">Profile</li>
             </Link>
@@ -30,12 +38,7 @@ const SideBar = (props) => {
             <Link to="/contact">
               <li className="navbar-item">Contact Us</li>
             </Link>
-            <Link to="/bookmarks">
-              <li className="navbar-item">Bookmarks</li>
-            </Link>
-            <Link to="/chat">
-              <li className="navbar-item">Your Chats</li>
-            </Link>
+
             <li className="navbar-item" onClick={props.logoutHandler}>
               Logout
             </li>

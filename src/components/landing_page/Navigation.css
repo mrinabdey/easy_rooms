@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-around;
   /* padding: 5px 0px; */
-  background-color: var(--blue);
 }
 
 .navbar_container {
   padding: 10px;
+  border-radius: 10px;
 }
 
 /* .navbar_container:hover {
@@ -15,6 +15,16 @@
 
 .navbar_icon {
   font-size: 20px;
-  color: #fff;
   pointer-events: none;
+  text-decoration: none;
+}
+
+.navbar_container:hover {
+  background-color: black;
+  color: #fff;
+  transition: 300ms;
+  cursor: pointer;
+}
+.navbar_icon:hover {
+  color: #fff;
 }

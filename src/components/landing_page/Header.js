@@ -3,6 +3,10 @@ import { Link, Redirect } from "react-router-dom";
 import AuthContext from "../../context/authcontext";
 import "./Header.css";
 import SideBar from "../common_components/Sidebar";
+import logo from "../../images/Easy_Rooms.png";
+import { BiSearchAlt } from "react-icons/bi";
+import { alignPropType } from "react-bootstrap/esm/DropdownMenu";
+import { GrTextAlignCenter } from "react-icons/gr";
 
 function Header(props) {
   const searchValue = useRef();
@@ -24,15 +28,13 @@ function Header(props) {
         <div className="logo_container">
           {/* <Link to="/"> */}
           <div className="logo">
-            <img
-              src="https://e7.pngegg.com/pngimages/339/761/png-clipart-computer-icons-foursquare-button-button-simple-logo.png"
-              alt="logo"
-            />
+            <img src={logo} alt="logo" />
           </div>
           {/* </Link> */}
         </div>
         <div className="search_bar_container">
           <div className="search_bar">
+            <BiSearchAlt style={{ fontSize: "18px" }} />
             <input
               id="search"
               type="text"
@@ -44,7 +46,17 @@ function Header(props) {
         </div>
         <div className="auth_text_container">
           {ctx.isLoggedIn ? (
-            <SideBar logoutHandler={logoutHandler} />
+            <div className="header-items-container">
+              <div className="show">
+                <div className="bookmark-container">
+                  <Link to="/bookmarks">Bookmarks</Link>
+                </div>
+                <div className="chats-container">
+                  <Link to="/chat">Chats</Link>
+                </div>
+              </div>
+              <SideBar logoutHandler={logoutHandler} />
+            </div>
           ) : (
             /*<div
               className="logout_text auth_text"
