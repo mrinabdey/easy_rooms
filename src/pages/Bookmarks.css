@@ -1,0 +1,11 @@
+.dummy-button {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+.dummy-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
