@@ -54,13 +54,13 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <LandingPage logoutHandler={logoutHandler} user/>
+              <LandingPage logoutHandler={logoutHandler} user />
             </Route>
             <Route exact path="/add_room">
               <AddRoomPage />
             </Route>
             <Route exact path="/login">
-              <LoginPage loggedIn={loginHandler}/>
+              <LoginPage loggedIn={loginHandler} />
             </Route>
             <Route exact path="/signup">
               <SignupPage />
@@ -75,7 +75,7 @@ function App() {
               <MarketPage />
             </Route>
             <Route exact path="/profile">
-              <Profile />
+              <Profile logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/about">
               <About />

@@ -19,8 +19,20 @@
 }
 
 .edit-details-button {
-  width: 15%;
-  padding: 8px;
+  margin: 10px;
+  width: 100px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  transition: 300ms;
+}
+.edit-details-button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 .edit-details-button-container {

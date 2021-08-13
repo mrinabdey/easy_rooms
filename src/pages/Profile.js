@@ -3,19 +3,16 @@ import Navigation from "../components/landing_page/Navigation";
 import Header from "../components/landing_page/Header";
 import AuthContext from "../context/authcontext";
 import { useRef, useState, useContext, useEffect } from "react";
-import mode from '../mode';
+import mode from "../mode";
 
-
-const Profile = () => {
+const Profile = (props) => {
   const [isEditClick, setEditClick] = useState(false);
   const [user, setUser] = useState({});
   const ctx = useContext(AuthContext);
   const username = localStorage.getItem("user");
   let url;
-  if(mode)
-    url = `https://easyrooms.herokuapp.com/auth/user/${username}`;
-  else
-    url = `http://localhost:4000/auth/user/${username}`;
+  if (mode) url = `https://easyrooms.herokuapp.com/auth/user/${username}`;
+  else url = `http://localhost:4000/auth/user/${username}`;
 
   const fetchUser = () => {
     fetch(url, {
@@ -45,9 +42,16 @@ const Profile = () => {
   };
   console.log(`values: ${user.name}`);
 
+  const logoutHandler = (loggedIn) => {
+    props.logoutHandler(loggedIn);
+    localStorage.setItem("isLoggedIn", false);
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  };
+
   return isEditClick ? (
     <div className="profile-container">
-      <Header />
+      <Header logoutHandler={logoutHandler} />
       <Navigation />
 
       <form className="detail-form-container">
@@ -98,7 +102,7 @@ const Profile = () => {
     </div>
   ) : (
     <div className="profile-container">
-      <Header />
+      <Header logoutHandler={logoutHandler} />
       <Navigation />
       <div className="detail-form-container">
         <div className="profile-pic-container">
