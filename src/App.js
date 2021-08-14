@@ -18,12 +18,14 @@ import FoodPage from "./pages/food_page";
 import NotesPage from "./pages/notes_page";
 import MarketPage from "./pages/market_page";
 import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Chat from "./pages/Chat";
 import { useEffect, useState } from "react";
 import FullCard from "./pages/FullCard";
 import Bookmarks from "./pages/Bookmarks";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -75,7 +77,10 @@ function App() {
               <MarketPage />
             </Route>
             <Route exact path="/profile">
-              <Profile />
+              <Profile logoutHandler={logoutHandler}/>
+            </Route>
+            <Route exact path="/edit_profile">
+              <EditProfile logoutHandler={logoutHandler}/>
             </Route>
             <Route exact path="/about">
               <About />

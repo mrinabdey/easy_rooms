@@ -13,33 +13,12 @@ const LandingPage = (props) => {
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState([]);
   let url;
-  if(mode)
-  url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
-  else
-  url = 'http://localhost:4000/features/get_rooms/0';
-
-  const fetchRoomsHandler = () => {
-    setIsLoading(true);
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setIsLoading(false);
-        setRooms(res);
-        setTemp(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    fetchRoomsHandler();
-  }, []);
+  if(mode) {
+    url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
+  }
+  else {
+    url = 'http://localhost:4000/features/get_rooms/0';
+  }
 
   const address_handler = (search_input) => {
     setTemp([]);
@@ -47,25 +26,16 @@ const LandingPage = (props) => {
     search_title.classList.remove("hidden");
     var element = document.getElementById("room_list");
     element.style.marginTop = 0;
-    console.log(search_input);
-    console.log(rooms);
     setSearch(search_input);
     var iter;
     var temp1 = [];
     for (iter in rooms) {
       if (rooms[iter].address === search_input) {
         temp1.push(rooms[iter]);
-        console.log(rooms[iter].address);
       }
     }
     setTemp(temp1);
-    console.log(temp);
-    //setRooms(rooms);
-    //setRooms([]);
-    console.log(rooms);
   };
-  console.log(rooms);
-  console.log(temp);
 
   const logoutHandler = (loggedIn) => {
     props.logoutHandler(loggedIn);
@@ -89,8 +59,7 @@ const LandingPage = (props) => {
       <h1 id="search_result_title" className="hidden">
         Search results for: {search}
       </h1>
-      <RoomsList rooms={temp} />
-
+      <RoomsList rooms={rooms}/>
       <AddRoomIcon />
     </>
   );
