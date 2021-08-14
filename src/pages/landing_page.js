@@ -5,7 +5,7 @@ import RoomsList from "../components/landing_page/rooms_list";
 import AddRoomIcon from "../components/landing_page/AddRoomIcon";
 import LoadingIcon from "../components/common_components/LoadingIcon";
 import "./landing_page.css";
-import mode from '../mode';
+import mode from "../mode";
 
 const LandingPage = (props) => {
   const [rooms, setRooms] = useState([]);
@@ -48,7 +48,7 @@ const LandingPage = (props) => {
     <>
       <Header logoutHandler={logoutHandler} />
       <Navigation />
-      <LoadingIcon visible={true} color="#365e75" />
+      <LoadingIcon visible={true} color="black" />
     </>
   ) : (
     <>

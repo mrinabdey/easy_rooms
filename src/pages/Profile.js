@@ -31,7 +31,12 @@ const Profile = (props) => {
     });
   };
 
-  
+  const logoutHandler = (loggedIn) => {
+    props.logoutHandler(loggedIn);
+    localStorage.setItem("isLoggedIn", false);
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  };
 
   useEffect(() => {
     fetchUser();

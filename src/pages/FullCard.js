@@ -7,79 +7,79 @@ import { GrLocation } from "react-icons/gr";
 import { BiRupee } from "react-icons/bi";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { BsBookmark, BsBookmarkFill, BsChatSquare } from "react-icons/bs";
-import mode from '../mode';
+import mode from "../mode";
 
 const FullCard = (props) => {
   let bookmarkStatus = false;
   const id = props.location.detailProps.detail._id;
-  let bookmarks = localStorage.getItem('bookmarks');
-  let bookmarksList = bookmarks.split(',');
-  if(bookmarksList.includes(id)) {
+  let bookmarks = localStorage.getItem("bookmarks");
+  let bookmarksList = bookmarks.split(",");
+
+  if (bookmarksList.includes(id)) {
     bookmarkStatus = true;
   }
   const [isClicked, setIsClicked] = useState(bookmarkStatus);
-  const user = localStorage.getItem('name');
-  const email = localStorage.getItem('email');
+  const user = localStorage.getItem("name");
+  const email = localStorage.getItem("email");
   let addBookmarkUrl;
   let removeBookmarkUrl;
 
-  if(mode) {
-    addBookmarkUrl = 'https://easyrooms.herokuapp.com/features/add_bookmark';
-    removeBookmarkUrl = 'https://easyrooms.herokuapp.com/features/remove_bookmark';
-  }
-
-  else {
-    addBookmarkUrl = 'http://localhost:4000/features/add_bookmark';
-    removeBookmarkUrl = 'http://localhost:4000/features/remove_bookmark';
+  if (mode) {
+    addBookmarkUrl = "https://easyrooms.herokuapp.com/features/add_bookmark";
+    removeBookmarkUrl =
+      "https://easyrooms.herokuapp.com/features/remove_bookmark";
+  } else {
+    addBookmarkUrl = "http://localhost:4000/features/add_bookmark";
+    removeBookmarkUrl = "http://localhost:4000/features/remove_bookmark";
   }
 
   const addBookmarkHandler = () => {
     setIsClicked(true);
     bookmarksList.push(id);
-    localStorage.setItem('bookmarks', bookmarksList);
-    console.log("add",id,email);
+    localStorage.setItem("bookmarks", bookmarksList);
+    console.log("add", id, email);
     fetch(addBookmarkUrl, {
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
-        'roomId': id, 
-        'email': email,
+        roomId: id,
+        email: email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        alert(res);
       })
-    })
-    .then(res => res.json())
-    .then(res => {
-      alert(res);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
-  
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const removeBookmarkHandler = () => {
     setIsClicked(false);
-    let newBookmarksList = bookmarksList.filter(bId => bId != id);
-    localStorage.setItem('bookmarks', newBookmarksList);
-    console.log("remove",id,email);
+    let newBookmarksList = bookmarksList.filter((bId) => bId != id);
+    localStorage.setItem("bookmarks", newBookmarksList);
+    console.log("remove", id, email);
     fetch(removeBookmarkUrl, {
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
-        'roomId': id, 
-        'email': email,
+        roomId: id,
+        email: email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        alert(res);
       })
-    })
-    .then(res => res.json())
-    .then(res => {
-      alert(res);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const sz = props.location.detailProps.detail.imageUrls.length;
   console.log(`size is ${sz}`);

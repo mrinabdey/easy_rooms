@@ -1,63 +1,87 @@
 .login_form_container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  width: auto;
+  transform: translate(80%, 0%);
+  text-align: center;
+  font-family: sans-serif;
 }
 
-/* .message_container {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 20%;
-    font-size: 20px;
-    color: black;
-} */
+.message_container {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 30%;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: black;
+  font-weight: bolder;
+}
 
-.email_input, .password_input {
-    width: 80%;
-    height: 40px;
-    border: 1px solid var(--blue);
-    border-radius: 20px;
-    margin: 10px;
-    font-size: 20px;
-    padding-left: 50px;
-    padding-right: 20px;
+.email_input,
+.password_input {
+  width: 80%;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 10px;
+  font-size: 18px;
+  padding-left: 50px;
+  padding-right: 20px;
+  color: black;
 }
 
 .icon {
-    position: absolute;
-    font-size: 25px;
-    padding-top: 18px;
-    padding-left: 25px;
-    color: var(--blue);
+  position: absolute;
+  font-size: 25px;
+  padding-top: 18px;
+  padding-left: 25px;
+  color: black;
 }
 
 .login_button {
-    margin: 10px;
-    width: 100px;
-    height: 40px;
-    border: 2px solid rgb(0, 204, 255);
-    border-radius: 10px;
-    background-color: var(--blue);
-    color: white;
-    font-size: 20px;
+  margin: 10px;
+  width: 100px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  transition: 300ms;
+}
+
+.login_button:hover {
+  border: 2px solid white;
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 .bottom_text_1 {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
 .bottom_text_2 {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .click_here_text {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .red_border {
-    border: 1px solid red;
+  border: 1px solid red;
+}
+
+@media (max-width: 800px) {
+  .login_form_container {
+    transform: translate(10%, -10%);
+  }
+}
+@media (max-width: 400px) {
+  .login_form_container {
+    transform: translate(-15%, -10%);
+  }
 }

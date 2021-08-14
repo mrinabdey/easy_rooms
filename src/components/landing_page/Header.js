@@ -8,7 +8,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { alignPropType } from "react-bootstrap/esm/DropdownMenu";
 import { GrTextAlignCenter } from "react-icons/gr";
 
-function Header(props) {
+const Header = (props) => {
   const searchValue = useRef();
   const ctx = useContext(AuthContext);
 
@@ -67,10 +67,10 @@ function Header(props) {
             */
             <>
               <Link to="/login" style={{ textDecoration: "none" }}>
-                <div className="login_text auth_text">Login</div>
+                <div className="login_text auth_text"> Login </div>
               </Link>
               <Link to="/signup" style={{ textDecoration: "none" }}>
-                <div className="signup_text auth_text">Signup</div>
+                <div className="signup_text auth_text"> Signup </div>
               </Link>
             </>
           )}
@@ -78,6 +78,6 @@ function Header(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
