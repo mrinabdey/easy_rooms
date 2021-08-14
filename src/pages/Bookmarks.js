@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react';
 import mode from '../mode';
 import BookmarkRoomsList from "../components/landing_page/BookmarkRoomsList";
 
-const Bookmarks = () => {
+const Bookmarks = (props) => {
   
   return (
     <div className="bookmarks-container">
-      <Header />
+      <Header logoutHandler={props.logoutHandler}/>
       <Navigation />
       <BookmarkRoomsList />
     </div>

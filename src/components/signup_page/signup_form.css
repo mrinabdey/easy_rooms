@@ -20,9 +20,9 @@
 }
 
 .signup_input {
-  width: 90%;
+  width: 30%;
   height: 40px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 20px;
   font-size: 20px;
   padding-left: 50px;
@@ -55,7 +55,7 @@
 }
 
 .bottom_text {
-  padding-top: 50px;
+  padding-top: 20px;
 
   font-family: sans-serif;
 }
@@ -79,4 +79,10 @@
 .check_icon_3 {
   color: green;
   margin-left: 350px;
+}
+
+@media (max-width: 500px) {
+  .signup_input {
+    width: 60%;
+  }
 }

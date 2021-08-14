@@ -56,7 +56,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <LandingPage logoutHandler={logoutHandler} user />
+              <LandingPage logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/add_room">
               <AddRoomPage />
@@ -89,7 +89,7 @@ function App() {
               <Contact />
             </Route>
             <Route exact path="/bookmarks">
-              <Bookmarks />
+              <Bookmarks logoutHandler={logoutHandler}/>
             </Route>
             <Route exact path="/chat" component={Chat} />
             <Route exact path="/details" component={FullCard} />

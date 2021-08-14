@@ -1,3 +1,3 @@
-let mode = false;
+let mode = true;
 
 module.exports = mode;

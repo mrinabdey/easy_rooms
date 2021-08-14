@@ -1,22 +1,22 @@
 .room_card_container {
   margin: 10px;
-  /* height: 50px; */
   border-radius: 10px;
   box-shadow: 1px 1px 7px #284759;
-  width: auto;
+  /* width: 70%; */
+  /* max-width: 300px; */
 }
 
 .room_image_container {
-  width: 100%;
-  height: 300px;
+  text-align: center;
+  height: 200px;
   overflow: hidden;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
 
 .room_image {
-  width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
 
 .room_information_container {

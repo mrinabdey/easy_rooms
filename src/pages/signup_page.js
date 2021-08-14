@@ -7,7 +7,6 @@ const SignupPage = () => {
       <div style={{ textAlign: "center" }} className="logo">
         <img src={logo} style={{ height: "100px", width: "auto" }} alt="logo" />
       </div>
-
       <SignupForm />
     </>
   );

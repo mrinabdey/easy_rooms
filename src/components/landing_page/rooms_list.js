@@ -60,24 +60,17 @@ const RoomsList = (props) => {
     <>
     <ul id="room_list" className="rooms_list">
       {rooms.map((room,index) => {
-      
-      if(index===(rooms.length-1)) {
-        if(pageNumber<Math.ceil(docCount/4)-1) {
+      if(index===docCount-1) {
+        return <RoomCard key={room._id} room={room} isObserved={false} />
+      }
+
+      else if(index===(rooms.length-1)) {
           return (
             <>
             <RoomCard key={room._id} room={room} isObserved={true} fetchNextPage={fetchNextPage}/>
             <Loader color="black" visible={true}/>
             </>
           )
-        }
-        else {
-          return (
-            <>
-            <RoomCard key={room._id} room={room} isObserved={true} fetchNextPage={fetchNextPage}/>
-            <Loader color="black" visible={false}/>
-            </>
-          )
-        }  
       }
       else 
       return (

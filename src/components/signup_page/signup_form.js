@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./signup_form.css";
@@ -28,6 +28,20 @@ const SignupForm = () => {
   //         document.querySelectorAll('.check_icon_3')[1].classList.remove('no_display')
   //     }
   // }
+
+  useEffect(() => {
+    const signup_input = document.querySelectorAll('.signup_input');
+    const signup_button = document.querySelector('.signup_button');
+    signup_button.addEventListener('click', () => {
+      for(let i=0;i<signup_input.length;i++) {
+        if(!signup_input[i].value) {
+          setMessage("please fill all fields");
+          return;
+        }
+      }
+      formSubmitHandler();
+    });
+  },[]);
 
   const formSubmitHandler = () => {
     fetch(url, {
@@ -99,6 +113,7 @@ const SignupForm = () => {
           type="password"
           placeholder="confirm password"
         />
+        <br />
         <input
           ref={contact}
           className="signup_input"
@@ -118,7 +133,8 @@ const SignupForm = () => {
         {/* <span className="check_icon check_icon_1 check_icon_12" onClick={(e) => changeIcon(e)}><i class="far fa-eye "></i></span>
             <span className="check_icon check_icon_2 no_display check_icon_22" onClick={(e) => changeIcon(e)}><i className="far fa-eye-slash " onClick={(e) => changeIcon(e)}></i></span> */}
         <div>
-          <button className="signup_button" onClick={formSubmitHandler}>
+          {/* <button className="signup_button" onClick={formSubmitHandler}> */}
+          <button className="signup_button" >
             SignUp
           </button>
         </div>

@@ -16,7 +16,7 @@ const RoomCard = (props) => {
         observer.unobserve(element);
         props.fetchNextPage();
       }
-    },{threshold: 0.5});
+    },{threshold: 1});
     if(element) {
       observer.observe(element);
     }

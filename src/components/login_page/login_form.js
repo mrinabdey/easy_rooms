@@ -18,6 +18,23 @@ const LoginForm = (props) => {
   if (mode) url = "https://easyrooms.herokuapp.com/auth/login";
   else url = "http://localhost:4000/auth/login";
 
+    useEffect(() => {
+      const password_input = document.querySelector('.password_input');
+      const email_input = document.querySelector('.email_input');
+      const login_button = document.querySelector('.login_button');
+      login_button.addEventListener('click', () => {
+        if(!password_input.value) {
+          setMessage("please fill all fields");
+          return;
+        }
+        if(!email_input.value) {
+          setMessage("please fill all fields");
+          return;
+        }
+        loginFormHandler();
+      });
+    },[]);
+
   const loginFormHandler = () => {
     fetch(url, {
       headers: {
@@ -76,7 +93,7 @@ const LoginForm = (props) => {
             placeholder="password"
           />
         </div>
-        <button className="login_button" onClick={loginFormHandler}>
+        <button className="login_button">
           Login
         </button>
         <div className="bottom_text_1">

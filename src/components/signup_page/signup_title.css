@@ -1,1 +1,11 @@
-
+.signup_title {
+  font-family: sans-serif;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: bold;    
+}
