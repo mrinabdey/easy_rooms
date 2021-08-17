@@ -1,12 +1,13 @@
 import "./Modal.css";
 import logo from "../../images/Easy_Rooms.png";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiFillStar } from "react-icons/ai";
 import { BiRupee } from "react-icons/bi";
 import { useState, useRef } from "react";
 import { GrLocation } from "react-icons/gr";
 import { BsBookmark, BsBookmarkFill, BsChatSquare } from "react-icons/bs";
 import mode from "../../mode";
 import { Link } from "react-router-dom";
+import ErrImg from "../../images/image-not-found.jpg";
 
 const Modal = ({ showModal, setShowModal, imageUrl, room }) => {
   const closeModal = () => {
@@ -122,8 +123,7 @@ const Modal = ({ showModal, setShowModal, imageUrl, room }) => {
                 alt="This is an image of a room"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src =
-                    "http://www.wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg";
+                  e.target.src = ErrImg;
                 }}
               />
               <a className="feature-next" onClick={plusSlides}>
@@ -149,6 +149,10 @@ const Modal = ({ showModal, setShowModal, imageUrl, room }) => {
                 </div>
                 <div className="modal-features-postedby">By: Dummy</div>
                 <div className="modal-features-contact">Ph no: Dummy</div>
+                <div className="modal-features-rating-container">
+                  <div className="modal-features-rating">2</div>
+                  <AiFillStar size="25px" style={{ paddingLeft: "5px" }} />
+                </div>
                 <div className="modal-features-button-container">
                   <div className="full-room_favorite_button">
                     {isClicked ? (

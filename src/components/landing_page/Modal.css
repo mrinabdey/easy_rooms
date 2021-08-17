@@ -25,6 +25,7 @@
 .modal-modal-wrapper img {
   width: 80%;
   height: 80%;
+  margin-top: 15%;
 }
 
 .modal-modal-content {
@@ -57,10 +58,11 @@
 }
 .modal-features-button-container {
   display: flex;
-  margin-top: 55%;
+  margin-top: inherit;
 }
 .modal-features-image-container {
   display: flex;
+  height: fit-content;
 }
 .feature-next,
 .feature-prev {
@@ -104,6 +106,20 @@
 }
 .modal-detail-features-container {
   margin-top: 10%;
+}
+
+.modal-features-rating-container {
+  align-items: center;
+  color: white;
+  width: 50px;
+  border-radius: 20px;
+  background-color: black;
+  display: flex;
+  height: 30px;
+  margin-top: 10px;
+}
+.modal-features-rating {
+  padding-left: 5px;
 }
 
 @media (max-width: 400px) {
