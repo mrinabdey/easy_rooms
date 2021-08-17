@@ -11,30 +11,23 @@ const LandingPage = (props) => {
   const [rooms, setRooms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [temp, setTemp] = useState([]);
   let url;
-  if(mode) {
+  if (mode) {
     url = "https://easyrooms.herokuapp.com/features/get_rooms/0";
-  }
-  else {
-    url = 'http://localhost:4000/features/get_rooms/0';
+  } else {
+    url = "http://localhost:4000/features/get_rooms/0";
   }
 
   const address_handler = (search_input) => {
-    setTemp([]);
-    var search_title = document.getElementById("search_result_title");
-    search_title.classList.remove("hidden");
-    var element = document.getElementById("room_list");
-    element.style.marginTop = 0;
-    setSearch(search_input);
-    var iter;
-    var temp1 = [];
-    for (iter in rooms) {
-      if (rooms[iter].address === search_input) {
-        temp1.push(rooms[iter]);
-      }
+    let search_title = document.getElementById("search_result_title");
+    let element = document.getElementById("room_list");
+    if (search_input !== "") {
+      element.style.marginTop = 0;
+      search_title.classList.remove("hidden");
     }
-    setTemp(temp1);
+
+    console.log(`searching for ${search_input}`);
+    setSearch(search_input);
   };
 
   const logoutHandler = (loggedIn) => {
@@ -59,7 +52,7 @@ const LandingPage = (props) => {
       <h1 id="search_result_title" className="hidden">
         Search results for: {search}
       </h1>
-      <RoomsList rooms={rooms}/>
+      <RoomsList rooms={rooms} to_search={search} />
       <AddRoomIcon />
     </>
   );
