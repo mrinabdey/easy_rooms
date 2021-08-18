@@ -14,27 +14,38 @@ const Header = (props) => {
 
   function keyDownHandler(event) {
     if (event.keyCode === 13) {
-      var search_input = document.getElementById("search").value;
+      let search_input = document.getElementById("search").value;
       console.log(`${search_input}`);
       document.getElementById("search").value = "";
       props.send_address(search_input);
     }
   }
+  const searchClickHandler = () => {
+    let search_input = document.getElementById("search").value;
+    console.log(`${search_input}`);
+    document.getElementById("search").value = "";
+    props.send_address(search_input);
+  };
   const logoutHandler = () => props.logoutHandler(false);
 
   return (
     <div className="header_container_container">
       <div className="header_container">
         <div className="logo_container">
-          {/* <Link to="/"> */}
-          <div className="logo">
-            <img src={logo} alt="logo" />
-          </div>
-          {/* </Link> */}
+          <Link to="/">
+            <div className="logo">
+              <img src={logo} alt="logo" />
+            </div>
+          </Link>
         </div>
         <div className="search_bar_container">
           <div className="search_bar">
-            <BiSearchAlt style={{ fontSize: "18px" }} />
+            <div className="search_bar_icon_container">
+              <BiSearchAlt
+                style={{ fontSize: "18px", cursor: "pointer" }}
+                onClick={searchClickHandler}
+              />
+            </div>
             <input
               id="search"
               type="text"

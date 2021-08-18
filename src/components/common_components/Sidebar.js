@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import mode from "../../mode.js";
 import { Link } from "react-router-dom";
 
 import "./SideBar.css";
@@ -6,8 +7,35 @@ import "./SideBar.css";
 const SideBar = (props) => {
   const [sideBar, setSideBar] = useState(false);
 
+  const [user, setUser] = useState({});
+  const email = localStorage.getItem("email");
+  let url;
+  if (mode) {
+    url = `https://easyrooms.herokuapp.com/user/${email}`;
+  } else {
+    url = `http://localhost:4000/user/${email}`;
+  }
+
+  const fetchUser = () => {
+    fetch(url, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setUser(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  console.log(user);
+
   const showSideBar = () => setSideBar(!sideBar);
-  const username = localStorage.getItem("name");
+  const username = user.name;
 
   return (
     <div className="navbar-icon-container">

@@ -24,6 +24,8 @@ const LandingPage = (props) => {
     if (search_input !== "") {
       element.style.marginTop = 0;
       search_title.classList.remove("hidden");
+    } else {
+      search_title.classList.add("hidden");
     }
 
     console.log(`searching for ${search_input}`);

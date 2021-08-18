@@ -3,18 +3,16 @@ import Navigation from "../components/landing_page/Navigation";
 import Header from "../components/landing_page/Header";
 import { useRef, useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import mode from '../mode';
-import CustomButton from '../components/common_components/CustomButton';
-
+import mode from "../mode";
+import CustomButton from "../components/common_components/CustomButton";
 
 const Profile = (props) => {
   const [user, setUser] = useState({});
   const email = localStorage.getItem("email");
   let url;
-  if(mode) {
+  if (mode) {
     url = `https://easyrooms.herokuapp.com/user/${email}`;
-  }
-  else {
+  } else {
     url = `http://localhost:4000/user/${email}`;
   }
 
@@ -22,13 +20,13 @@ const Profile = (props) => {
     fetch(url, {
       method: "GET",
     })
-    .then((res) => res.json())
-    .then((res) => {
-      setUser(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then((res) => res.json())
+      .then((res) => {
+        setUser(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const logoutHandler = (loggedIn) => {
@@ -41,35 +39,39 @@ const Profile = (props) => {
   useEffect(() => {
     fetchUser();
   }, []);
-
-  return (<div className="profile-container">
-    <Header logoutHandler={props.logoutHandler}/>
-    <Navigation />
-    <div className="detail-form-container">
-      <div className="profile-pic-container">
-        <i class="fas fa-user-circle"></i>
-      </div>
-      <div className="user-details-container">
-        <div className="user-title-container name">Name:</div>
-        <div className="user-detail-container">{user.name}</div>
-        <div className="user-title-container location">Location:</div>
-        <div className="user-detail-container">{user.address}</div>
-        <div className="user-title-container contact">Contact Number:</div>
-        <div className="user-detail-container">{user.contact}</div>
-        <div className="user-title-container emailId">Email Id:</div>
-        <div className="user-detail-container">{user.email}</div>
-      </div>
-      <div className="edit-details-button-container">
-        <Link to="/edit_profile">
-        <button className="edit-details-button">
-          Edit
-        </button>
-        </Link> 
+  console.log(user);
+  return (
+    <div className="profile-container">
+      <Header logoutHandler={props.logoutHandler} />
+      <Navigation />
+      <div className="detail-form-container">
+        <div className="profile-pic-container">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div className="user-details-container">
+          <div className="user-title-container name">Name:</div>
+          <div className="user-detail-container">{user.name}</div>
+          <div className="user-title-container location">Location:</div>
+          <div className="user-detail-container">{user.address}</div>
+          <div className="user-title-container contact">Contact Number:</div>
+          <div className="user-detail-container">{user.contact}</div>
+          <div className="user-title-container emailId">Email Id:</div>
+          <div className="user-detail-container">{user.email}</div>
+        </div>
+        <div className="edit-details-button-container">
+          <Link
+            to={{
+              pathname: "/edit_profile",
+              userDetail: { userProp: props.user },
+            }}
+          >
+            <button className="edit-details-button">Edit</button>
+          </Link>
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
 export default Profile;
 
