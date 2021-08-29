@@ -18,7 +18,11 @@ const Modal = ({ showModal, setShowModal, imageUrl, room }) => {
   let bookmarkStatus = false;
   const id = room._id;
   let bookmarks = localStorage.getItem("bookmarks");
-  let bookmarksList = bookmarks.split(",");
+  let bookmarksList;
+  if(!bookmarks) 
+    bookmarksList = [];
+  else
+    bookmarksList = bookmarks.split(",");
 
   if (bookmarksList.includes(id)) {
     bookmarkStatus = true;
