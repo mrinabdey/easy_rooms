@@ -59,7 +59,7 @@ function App() {
               <LandingPage logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/add_room">
-              <AddRoomPage />
+              <AddRoomPage logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/login">
               <LoginPage loggedIn={loginHandler} />
@@ -77,10 +77,10 @@ function App() {
               <MarketPage />
             </Route>
             <Route exact path="/profile">
-              <Profile logoutHandler={logoutHandler}/>
+              <Profile logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/edit_profile">
-              <EditProfile logoutHandler={logoutHandler}/>
+              <EditProfile logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/about">
               <About />
@@ -89,7 +89,7 @@ function App() {
               <Contact />
             </Route>
             <Route exact path="/bookmarks">
-              <Bookmarks logoutHandler={logoutHandler}/>
+              <Bookmarks logoutHandler={logoutHandler} />
             </Route>
             <Route exact path="/chat" component={Chat} />
             <Route exact path="/details" component={FullCard} />

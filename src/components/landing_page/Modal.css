@@ -55,6 +55,7 @@
 .modal-detail-container {
   display: flex;
   justify-content: space-between;
+  overflow: scroll;
 }
 .modal-features-button-container {
   display: flex;
@@ -124,11 +125,11 @@
 
 @media (max-width: 400px) {
   .modal-modal-wrapper {
-    height: 600px;
+    height: 650px;
     display: block;
+    overflow: scroll;
   }
   .modal-detail-features-container {
-    margin-top: 0%;
     padding-left: 10px;
   }
   .modal-features-title {
@@ -151,6 +152,8 @@
   }
   .modal-modal-wrapper img {
     width: 85%;
+    height: 335px;
+    margin-top: 0%;
   }
   .feature-next,
   .feature-prev {

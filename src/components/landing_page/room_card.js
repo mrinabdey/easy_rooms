@@ -41,6 +41,8 @@ const RoomCard = (props) => {
     setShowModal(!showModal);
   };
 
+  console.log(`getting length ${props.room.features.length}`);
+
   return props.isObserved ? (
     <div
       id="room-card-container"

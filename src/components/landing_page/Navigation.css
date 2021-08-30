@@ -1,5 +1,5 @@
 .navbar_container_container {
-  display: flex;
+  display: none;
   justify-content: space-around;
   /* padding: 5px 0px; */
   background-color: #f7f7f7;

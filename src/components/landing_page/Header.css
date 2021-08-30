@@ -20,6 +20,7 @@
   background-color: #f7f7f7;
   font-family: sans-serif;
   border: 1px solid #dbdbdb;
+  padding-left: 10px;
 }
 
 #search::placeholder {
@@ -100,4 +101,21 @@
 }
 .search_bar {
   display: flex;
+  margin-top: 7px;
+}
+
+@media (max-width: 400px) {
+  .search_bar_container {
+    margin-left: 0%;
+  }
+  #search {
+    all: unset;
+    /* border: 1px solid; */
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    font-family: sans-serif;
+    border: 1px solid #dbdbdb;
+    padding-left: 10px;
+    width: 75%;
+  }
 }
