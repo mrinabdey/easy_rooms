@@ -19,10 +19,8 @@ const Modal = ({ showModal, setShowModal, imageUrl, room }) => {
   const id = room._id;
   let bookmarks = localStorage.getItem("bookmarks");
   let bookmarksList;
-  if(!bookmarks) 
-    bookmarksList = [];
-  else
-    bookmarksList = bookmarks.split(",");
+  if (!bookmarks) bookmarksList = [];
+  else bookmarksList = bookmarks.split(",");
 
   if (bookmarksList.includes(id)) {
     bookmarkStatus = true;
@@ -176,7 +174,12 @@ const Modal = ({ showModal, setShowModal, imageUrl, room }) => {
               <div className="modal-close-btn">
                 <AiOutlineClose
                   className="modal-close"
-                  style={{ width: "25px", height: "25px", borderRadius: "3px" }}
+                  style={{
+                    width: "25px",
+                    height: "25px",
+                    borderRadius: "3px",
+                    transition: "200ms",
+                  }}
                   onClick={closeModal}
                 />
               </div>

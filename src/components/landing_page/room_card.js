@@ -94,7 +94,11 @@ const RoomCard = (props) => {
       </div>
       <div className="room_information_container" onClick={getModal}>
         <div className="room_price_container">{props.room.price}</div>
-        <div className="room_features_container">{props.room.features}</div>
+        <div className="room_features_container">
+          {props.room.features.length > 150
+            ? props.room.features.slice(0, 50) + "      ...click to see more"
+            : props.room.features}
+        </div>
         <div className="room_address_container">{props.room.address}</div>
       </div>
     </div>

@@ -48,6 +48,14 @@
   padding: 10px 0px;
 }
 
+.navbar-item:hover {
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  transition: 300ms;
+}
+
 .user-details {
   text-align: center;
   font-family: -webkit-pictograph;
