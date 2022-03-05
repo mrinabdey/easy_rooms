@@ -1,7 +1,7 @@
 .rooms_list {
   list-style: none;
   display: grid;
-  grid-template-columns: 340px 340px 340px 340px;
+  grid-template-columns: auto auto auto auto;
   background-color: #f7f7f7;
 }
 

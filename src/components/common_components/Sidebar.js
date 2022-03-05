@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import mode from "../../mode.js";
 import { Link } from "react-router-dom";
-
+import { MdCancel } from "react-icons/md";
 import "./SideBar.css";
 
 const SideBar = (props) => {
@@ -44,6 +44,9 @@ const SideBar = (props) => {
       </div>
       <nav className={sideBar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSideBar}>
+          <div className="nav-menu-cross" onClick={showSideBar}>
+            <MdCancel />
+          </div>
           <li className="navbar-toggle">
             <i class="fas fa-user-circle"></i>
           </li>
